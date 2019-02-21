@@ -37,9 +37,8 @@ class FamousSection extends Component {
         <p>
           {this.state.famousPerson.name} is famous for "{this.state.famousPerson.role}".
         </p>
-        {/* The list should go here. */}
         <ul>
-
+          {/* The list should go here. */}
         </ul>
       </section>
     );
