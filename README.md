@@ -9,6 +9,8 @@ Start with the code provided here.
 - When the Submit button is clicked, add the new famous person to the `people` array. This should update the list shown.
 - Clear the input fields after a new person is added.
 
+## Stretch Goals
+
 ### Components
 
 Split the `FamousSection` Component into 3 Components:
