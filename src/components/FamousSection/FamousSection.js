@@ -10,7 +10,7 @@ class FamousSection extends Component {
     }
   }
 
-  handleChangeFor = (propertyName) => (event) => {
+  handleChangeFor = (event, propertyName) => {
     this.setState({
       famousPerson: {
         ...this.state.famousPerson,
@@ -29,9 +29,9 @@ class FamousSection extends Component {
       <section className="new-person-section">
         <form onSubmit={this.addPerson}>
           <label htmlFor="name-input">Name:</label>
-          <input id="name-input" onChange={this.handleChangeFor('name')} />
+          <input id="name-input" onChange={(event) => this.handleChangeFor(event, 'name')} />
           <label htmlFor="role-input">Famous for:</label>
-          <input id="role-input" onChange={this.handleChangeFor('role')} />
+          <input id="role-input" onChange={(event) => this.handleChangeFor(event, 'role')} />
           <button type="submit">Done</button>
         </form>
         <p>
