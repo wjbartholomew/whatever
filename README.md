@@ -17,5 +17,5 @@ Split the `FamousSection` Component into 3 Components:
 
 - a FamousPersonForm (to add a new person)
 - a FamousPersonList (to display each person in the array)
-- a FamousPerson (to display the original famous person's info as *'Felicia Day is famous for "The Guild".* (Use `<span>` to wrap the text.)
+- a FamousPerson (to display a single famous person's info as *'Felicia Day is famous for "The Guild".* (Use this inside of the FamousPersonList component.)
 
