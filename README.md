@@ -11,7 +11,7 @@ Start with the code provided here.
 
 ## Stretch Goals
 
-### Components
+### Components (REQUIRES PROPS)
 
 Split the `FamousSection` Component into 3 Components:
 
