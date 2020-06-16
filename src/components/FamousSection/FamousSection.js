@@ -4,24 +4,36 @@ import './FamousSection.css';
 class FamousSection extends Component {
 
   state = {
-    famousPerson: {
+    famousPerson: [
+  ],
+    newFamousPerson: {
       name: '',
-      role: '',
+      role: ''
     }
   }
 
   handleChangeFor = (event, propertyName) => {
     this.setState({
-      famousPerson: {
-        ...this.state.famousPerson,
+      newFamousPerson: {
+        ...this.state.newFamousPerson,
         [propertyName]: event.target.value,
       }
     })
   }
 
   addPerson = (event) => {
-    event.preventDefault();
+    event.preventDefault(event);
+    let newPerson = this.state.newFamousPerson;
     console.log( `The famous person is `, this.state.famousPerson );
+    
+    this.setState({
+      famousPerson: [...this.state.famousPerson, newPerson],
+      newFamousPerson: {
+        name: '',
+        role: ''
+      }
+    }
+    )
   }
 
   render() {
@@ -29,16 +41,17 @@ class FamousSection extends Component {
       <section className="new-person-section">
         <form onSubmit={this.addPerson}>
           <label htmlFor="name-input">Name:</label>
-          <input id="name-input" onChange={(event) => this.handleChangeFor(event, 'name')} />
+          <input value={this.state.newFamousPerson.name} id="name-input" onChange={(event) => this.handleChangeFor(event, 'name')} />
           <label htmlFor="role-input">Famous for:</label>
-          <input id="role-input" onChange={(event) => this.handleChangeFor(event, 'role')} />
+          <input value={this.state.newFamousPerson.role} id="role-input" onChange={(event) => this.handleChangeFor(event, 'role')} />
           <button type="submit">Done</button>
         </form>
         <p>
-          {this.state.famousPerson.name} is famous for "{this.state.famousPerson.role}".
+          {this.state.newFamousPerson.name} is famous for "{this.state.newFamousPerson.role}".
         </p>
         <ul>
-          {/* The list should go here. */}
+          {this.state.famousPerson.map((person, index) => 
+          <li key = { index }>{person.name} is famous for {person.role}</li>)}
         </ul>
       </section>
     );
